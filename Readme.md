@@ -1,3 +1,15 @@
+# canvas-npmmirror
+
+A fork of [`canvas`](https://github.com/Automattic/node-canvas) using [`npmmirror`](https://npmmirror.com) as registry
+
+## Installation
+
+```bash
+$ npm install canvas@npm:canvas-npmmirror@latest
+```
+
+---
+
 # node-canvas
 
 ![Test](https://github.com/Automattic/node-canvas/workflows/Test/badge.svg)
@@ -83,18 +95,44 @@ This project is an implementation of the Web Canvas API and implements that API 
 
 ### Non-standard APIs
 
-* [Image#src](#imagesrc)
-* [Image#dataMode](#imagedatamode)
-* [Canvas#toBuffer()](#canvastobuffer)
-* [Canvas#createPNGStream()](#canvascreatepngstream)
-* [Canvas#createJPEGStream()](#canvascreatejpegstream)
-* [Canvas#createPDFStream()](#canvascreatepdfstream)
-* [Canvas#toDataURL()](#canvastodataurl)
-* [CanvasRenderingContext2D#patternQuality](#canvasrenderingcontext2dpatternquality)
-* [CanvasRenderingContext2D#quality](#canvasrenderingcontext2dquality)
-* [CanvasRenderingContext2D#textDrawingMode](#canvasrenderingcontext2dtextdrawingmode)
-* [CanvasRenderingContext2D#globalCompositeOperation = 'saturate'](#canvasrenderingcontext2dglobalcompositeoperation--saturate)
-* [CanvasRenderingContext2D#antialias](#canvasrenderingcontext2dantialias)
+- [Installation](#installation)
+- [Installation](#installation-1)
+  - [Compiling](#compiling)
+- [Quick Example](#quick-example)
+- [Upgrading from 1.x to 2.x](#upgrading-from-1x-to-2x)
+- [Documentation](#documentation)
+  - [Utility methods](#utility-methods)
+  - [Non-standard APIs](#non-standard-apis)
+  - [createCanvas()](#createcanvas)
+  - [createImageData()](#createimagedata)
+  - [loadImage()](#loadimage)
+  - [registerFont()](#registerfont)
+  - [Image#src](#imagesrc)
+  - [Image#dataMode](#imagedatamode)
+  - [Canvas#toBuffer()](#canvastobuffer)
+    - [Examples](#examples)
+  - [Canvas#createPNGStream()](#canvascreatepngstream)
+    - [Examples](#examples-1)
+  - [Canvas#createJPEGStream()](#canvascreatejpegstream)
+    - [Examples](#examples-2)
+  - [Canvas#createPDFStream()](#canvascreatepdfstream)
+  - [Canvas#toDataURL()](#canvastodataurl)
+  - [CanvasRenderingContext2D#patternQuality](#canvasrenderingcontext2dpatternquality)
+  - [CanvasRenderingContext2D#quality](#canvasrenderingcontext2dquality)
+  - [CanvasRenderingContext2D#textDrawingMode](#canvasrenderingcontext2dtextdrawingmode)
+  - [CanvasRenderingContext2D#globalCompositeOperation = 'saturate'](#canvasrenderingcontext2dglobalcompositeoperation--saturate)
+  - [CanvasRenderingContext2D#antialias](#canvasrenderingcontext2dantialias)
+- [PDF Output Support](#pdf-output-support)
+- [SVG Output Support](#svg-output-support)
+- [SVG Image Support](#svg-image-support)
+- [Image pixel formats (experimental)](#image-pixel-formats-experimental)
+- [Testing](#testing)
+- [Benchmarks](#benchmarks)
+- [Examples](#examples-3)
+- [Original Authors](#original-authors)
+- [License](#license)
+  - [node-canvas](#node-canvas-1)
+  - [BMP parser](#bmp-parser)
 
 ### createCanvas()
 
